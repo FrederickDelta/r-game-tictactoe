@@ -129,3 +129,36 @@ body {
   background-color: white;
 }
 /* END */
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.winning-message.show {
+  display: flex;
+}
+
+.winning-message button {
+  font-size: 3rem;
+  background-color: white;
+  border: 3px solid black;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.winning-message button:hover {
+  color: white;
+  background-color: black;
+  border-color: white;
+}
