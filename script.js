@@ -6,6 +6,7 @@ const winningMessageElement = document.getElementById("winningMessage");
 const winningMessageTextElement = document.querySelector(
   "[data-winning-message-text]"
 );
+const restartButton = document.getElementById("restartButton");
 let circleTurn;
 const WINNING_COMBINATIONS = [
   [0, 1, 2],
@@ -18,15 +19,22 @@ const WINNING_COMBINATIONS = [
   [2, 4, 6],
 ];
 
+restartButton.addEventListener("click", startGame);
+
 startGame();
 function startGame() {
   cellElements.forEach((cell) => {
+    cell.classList.remove(X_CLASS);
+    cell.classList.remove(CIRCLE_CLASS);
+    cell.removeEventListener("click", handleClick);
     // Only fire click event once
     cell.addEventListener("click", handleClick, { once: true });
   });
 
   circleTurn = true;
   setBoardHoverClass();
+
+  winningMessageElement.classList.remove("show");
 }
 
 function handleClick(e) {
