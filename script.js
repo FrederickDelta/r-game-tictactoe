@@ -1,5 +1,3 @@
-const X_CLASS = "x";
-const CIRCLE_CLASS = "circle";
 const board = document.getElementById("board");
 const cellElements = document.querySelectorAll("[data-cell]");
 const winningMessageElement = document.getElementById("winningMessage");
@@ -7,6 +5,8 @@ const winningMessageTextElement = document.querySelector(
   "[data-winning-message-text]"
 );
 const restartButton = document.getElementById("restartButton");
+const X_CLASS = "x";
+const CIRCLE_CLASS = "circle";
 let circleTurn;
 const WINNING_COMBINATIONS = [
   [0, 1, 2],
@@ -20,8 +20,8 @@ const WINNING_COMBINATIONS = [
 ];
 
 restartButton.addEventListener("click", startGame);
-
 startGame();
+
 function startGame() {
   cellElements.forEach((cell) => {
     cell.classList.remove(X_CLASS);
